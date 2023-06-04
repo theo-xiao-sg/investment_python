@@ -1,6 +1,7 @@
 # Backtesting a well known investment stratergy with python
 
-I backtested a well know investment stratergy with python called SMA 200 to find out if it is really worth its value, and I found out that it was not.
+I backtested a well know investment stratergy with python called SMA 200 to find out if it is really worth its value. 
+Please read my project description here: https://theo-xiao-sg.github.io/investment.html
  
 ## Running Guide
 
