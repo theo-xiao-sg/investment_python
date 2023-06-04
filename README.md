@@ -16,4 +16,5 @@ python -m pip install -r requirements.txt
 ```
 
 ### Trying it out
-Feel free to change the ticker to any stock and the SMA to any day you want and see the results. However, the results will all be the same: SMA is not worth its value.
+* Run `moving_average_main.py` in the folder, a few images will be saved in the folder of "images"
+* Feel free to change the ticker to any other stocks (in line 14-21) and the SMA days (in line 41) you like and see the results. However, the conclusion still hold: SMA is not as profitable as many investment gurus claim.
