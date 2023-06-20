@@ -56,6 +56,19 @@ def moving_average_strategy(company_name, stock_data, ma_window):
     images_folder = 'images'
     os.makedirs(images_folder, exist_ok=True)
 
+    # Plot prices
+    plt.plot(stock_data_slice['price'], label='Price')
+    plt.title(company_name + ' Prices')
+    plt.xlabel('Date')
+    plt.xticks(rotation=45, ha='right')
+    plt.ylabel('Price')
+    plt.tight_layout()
+    plt.grid(True)
+    plt.legend()
+    plt.show(block=False)
+    plt.savefig(r'{}\{}_prices.png'.format(images_folder, company_name))
+    plt.close()
+
     # Plot prices and the moving average
     plt.plot(stock_data_slice['price'], label='Price')
     plt.plot(stock_data_slice['moving_average'], label=str(ma_window)+'-day Moving Average')
@@ -70,7 +83,7 @@ def moving_average_strategy(company_name, stock_data, ma_window):
     plt.savefig(r'{}\{}_{}ma.png'.format(images_folder, company_name, str(ma_window)))
     plt.close()
 
-    # Plot the cumulative PnL for both the Buy-Hold and MA strategy
+    # Plot the cumulative PnL for both the Buy-Hold and fake MA strategy
     plt.plot(stock_data_slice['Buy_Hold_PnL'], label='Buy_Hold')
     plt.plot(stock_data_slice['fake_MA_PnL'], label='fake_MA')
     plt.title(company_name + '\nComparison of Buy_Hold vs MA Strategies - Cumulative PnL')
@@ -84,7 +97,7 @@ def moving_average_strategy(company_name, stock_data, ma_window):
     plt.savefig(r'{}\{}_{}ma_pnl1.png'.format(images_folder, company_name, str(ma_window)))
     plt.close()
 
-    # Plot the cumulative PnL for both the Buy-Hold and MA strategy
+    # Plot the cumulative PnL for both the Buy-Hold and realistic MA strategy
     plt.plot(stock_data_slice['Buy_Hold_PnL'], label='Buy_Hold')
     plt.plot(stock_data_slice['MA_PnL'], label='MA')
     plt.title(company_name + '\nComparison of Buy_Hold vs MA Strategies - Cumulative PnL')
@@ -98,7 +111,7 @@ def moving_average_strategy(company_name, stock_data, ma_window):
     plt.savefig(r'{}\{}_{}ma_pnl2.png'.format(images_folder, company_name, str(ma_window)))
     plt.close()
 
-    # Plot the cumulative PnL for both the Buy-Hold and MA strategy
+    # Plot the cumulative PnL for the Buy-Hold and both MA strategies
     plt.plot(stock_data_slice['Buy_Hold_PnL'], label='Buy_Hold')
     plt.plot(stock_data_slice['MA_PnL'], label='MA')
     plt.plot(stock_data_slice['fake_MA_PnL'], label='fake_MA')

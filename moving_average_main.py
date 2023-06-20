@@ -12,8 +12,8 @@ end = datetime.today().strftime('%Y-%m-%d')
 
 # Define the ticker symbol for the stocks
 # ticker = '^NDX'
-ticker = 'TSLA'
-# ticker = 'MSFT'
+# ticker = 'TSLA'
+ticker = 'MSFT'
 # ticker = 'AAPL'
 # ticker = 'AMZN'
 # ticker = 'GOOG'
